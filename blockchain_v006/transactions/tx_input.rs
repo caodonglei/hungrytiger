@@ -38,3 +38,20 @@ impl TxInput {
     pub fn get_vout(&self) -> usize {
         self.vout
     }
+
+    pub fn get_pub_key(&self) -> &[u8] {
+        self.pub_key.as_slice()
+    }
+
+    pub fn get_signature(&self) -> &[u8] {
+        self.signature.as_slice()
+    }
+
+    pub fn set_signature(&mut self, signature: Vec<u8>) {
+        self.signature = signature
+    }
+
+    pub fn set_pub_key(&mut self, pub_key: &[u8]) {
+        self.pub_key = pub_key.to_vec();
+    }
+}
